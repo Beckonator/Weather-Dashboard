@@ -2,36 +2,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <div>Weather Dashboard</div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3" id="city">
-          <h2>Search for a City:</h2>
-          <input type="text" />
-          <button type="button" id="searchBtn" class="btn-primary"></button>
-          <div id="city-list"></div>
+    <header class="mb-3">
+      <h1 class="bold py-2 w-100 text-center">Weather Dashboard</h1>
+    </header>
+    <main class="row mx-1 h-75">
+      <div class="col-3">
+        <div class="d-flex flex-column justify-content-between">
+          <h2 class="bold">Search for a City:</h2>
+          <form id="search-form" class="d-flex flex-column mb-2">
+            <label for="city-search"></label>
+            <input
+              id="search"
+              name="city-search"
+              type="text"
+              class="w-100 rounded py-2"
+            />
+            <button
+              id="search-btn"
+              type="submit"
+              class="search text-white w-100 rounded my-3 py-1"
+            >
+              Search
+            </button>
+          </form>
         </div>
-        <div class="row">
-          <div class="col" id="btnWeather">
-            <h1 id="cityNameDate"></h1>
-            <p id="temp"></p>
-            <p id="wind"></p>
-            <p id="humidity"></p>
-            <p id="uv-index"></p>
+        <div id="city-btn-container"></div>
+      </div>
+      <div class="col-9 h-75">
+        <div class="border border-dark">
+          <div class="mx-2">
+            <div class="m-1" id="current-forecast-container">
+              <h2 class="fw-bold">
+                <span id="current-city">--</span>
+                <span id="current-day">--</span>
+                <img id="current-weather-icon" src="" alt="" />
+              </h2>
+              <p>Temp: <span id="current-city-temp"></span></p>
+              <p>Wind: <span id="current-city-wind"></span></p>
+              <p>Humidity: <span id="current-city-humidity"></span></p>
+              <p>
+                UV Index:
+                <span
+                  id="current-city-uvi"
+                  class="text-white rounded p-1"
+                ></span>
+              </p>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col" id="fiveDay">
-            <h2>5-Day Forecast:</h2>
+        <h4 class="fw-bold py-2">5-Day Forecast:</h4>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="col-2 text-white forecast-card">
+            <div class="m-2">
+              <h5 class="fw-bold"><span id="d1date">--</span></h5>
+              <h4><img id="d1icon" src="" alt="" /></h4>
+              <p>Temp: <span id="d1temp">--</span></p>
+              <p>Wind: <span id="d1wind">--</span></p>
+              <p>Humidity: <span id="d1humid">--</span></p>
+            </div>
+          </div>
+          <div class="col-2 text-white forecast-card">
+            <div class="m-2">
+              <h5 class="fw-bold"><span id="d2date">--</span></h5>
+              <h4><img id="d2icon" src="" alt="" /></h4>
+              <p>Temp: <span id="d2temp">--</span></p>
+              <p>Wind: <span id="d2wind">--</span></p>
+              <p>Humidity: <span id="d2humid">--</span></p>
+            </div>
+          </div>
+          <div class="col-2 text-white forecast-card">
+            <div class="m-2">
+              <h5 class="fw-bold"><span id="d3date">--</span></h5>
+              <h4><img id="d3icon" src="" alt="" /></h4>
+              <p>Temp: <span id="d3temp">--</span></p>
+              <p>Wind: <span id="d3wind">--</span></p>
+              <p>Humidity: <span id="d3humid">--</span></p>
+            </div>
+          </div>
+          <div class="col-2 text-white forecast-card">
+            <div class="m-2">
+              <h5 class="fw-bold"><span id="d4date">--</span></h5>
+              <h4><img id="d4icon" src="" alt="" /></h4>
+              <p>Temp: <span id="d4temp">--</span></p>
+              <p>Wind: <span id="d4wind">--</span></p>
+              <p>Humidity: <span id="d4humid">--</span></p>
+            </div>
+          </div>
+          <div class="col-2 text-white forecast-card">
+            <div class="m-2">
+              <h5 class="fw-bold"><span id="d5date">--</span></h5>
+              <h4><img id="d5icon" src="" alt="" /></h4>
+              <p>Temp: <span id="d5temp">--</span></p>
+              <p>Wind: <span id="d5wind">--</span></p>
+              <p>Humidity: <span id="d5humid">--</span></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

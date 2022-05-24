@@ -1,0 +1,47 @@
+header {
+  background: skyblue;
+}
+
+.search {
+  background-color: blue;
+  border: none;
+}
+
+.search:hover {
+  background-color: lightblue;
+  border: none;
+}
+
+.city-btn {
+  background-color: grey;
+  border: none;
+}
+
+.city-btn:hover {
+  background-color: lightgray;
+  border: none;
+}
+
+.forecast-card {
+  background-color: darkblue;
+}
+
+.low {
+  background-color: green;
+}
+
+.moderate {
+  background-color: yellow;
+}
+
+.high {
+  background-color: orange;
+}
+
+.very-high {
+  background-color: red;
+}
+
+.extreme {
+  background-color: violet;
+}
